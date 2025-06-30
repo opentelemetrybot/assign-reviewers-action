@@ -10,7 +10,6 @@ permissions:
 jobs:
   run_self:
     permissions:
-      issues: write
       pull-requests: write
     runs-on: ubuntu-latest
     name: Assign Reviewers
