@@ -3,10 +3,14 @@ on:
   # pull_request_target is needed instead of just pull_request
   # because repository write permission is needed to assign reviewers
   pull_request_target:
-
+permissions:
+  contents: read
 jobs:
   run_self:
     runs-on: ubuntu-latest
     name: Assign Reviewers
+    permissions:
+      issues: write
+      pull-requests: write
     steps:
       - uses: open-telemetry/assign-reviewers-action@main
