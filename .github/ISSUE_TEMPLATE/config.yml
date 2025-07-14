@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: OpenTelemetry Community
+    url: https://opentelemetry.io/community/
+    about: Get help from the OpenTelemetry community
+  - name: GitHub Discussions
+    url: https://github.com/open-telemetry/opentelemetry-collector-contrib/discussions
+    about: Ask questions and discuss with the community
