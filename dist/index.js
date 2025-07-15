@@ -22,13 +22,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -144,15 +154,25 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.validateConfig = void 0;
+exports.validateConfig = validateConfig;
 const t = __importStar(__nccwpck_require__(5428));
 const utils_1 = __nccwpck_require__(7736);
 const ConfigDecoder = t.exact(t.type({
@@ -166,7 +186,6 @@ function validateConfig(conf) {
         ignoredAuthors: new Set(decoded['ignored-authors']),
     };
 }
-exports.validateConfig = validateConfig;
 
 
 /***/ }),
@@ -192,22 +211,33 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.mustDecode = exports.StringList = exports.withDefault = void 0;
+exports.StringList = void 0;
+exports.withDefault = withDefault;
+exports.mustDecode = mustDecode;
 const Either_1 = __nccwpck_require__(7534);
 const t = __importStar(__nccwpck_require__(5428));
 const PathReporter_1 = __nccwpck_require__(2985);
 function withDefault(type, defaultValue) {
     return new t.Type(type.name, type.is, (v, c) => type.validate(v != null ? v : defaultValue, c), type.encode);
 }
-exports.withDefault = withDefault;
 exports.StringList = new t.Type('StringList', t.array(t.string).is, (u, c) => {
     if (t.string.is(u)) {
         return t.success(u.split(/\s+/));
@@ -225,7 +255,6 @@ function mustDecode(decoder, input) {
     const errs = PathReporter_1.PathReporter.report(result);
     throw new Error(errs[0]);
 }
-exports.mustDecode = mustDecode;
 
 
 /***/ }),
@@ -251,13 +280,23 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    __setModuleDefault(result, mod);
-    return result;
-};
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -268,13 +307,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.loadYaml = exports.getReviews = exports.getReviewers = exports.getChangedFiles = exports.getRefs = exports.getAssignedUsers = exports.getPullAuthor = void 0;
+exports.getPullAuthor = getPullAuthor;
+exports.getAssignedUsers = getAssignedUsers;
+exports.getRefs = getRefs;
+exports.getChangedFiles = getChangedFiles;
+exports.getReviewers = getReviewers;
+exports.getReviews = getReviews;
+exports.loadYaml = loadYaml;
 const github = __importStar(__nccwpck_require__(5438));
 const yaml = __importStar(__nccwpck_require__(1917));
 const path = __importStar(__nccwpck_require__(1017));
 function getPullAuthor(client) {
-    var _a;
     return __awaiter(this, void 0, void 0, function* () {
+        var _a;
         const result = yield client.rest.pulls.get({
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
@@ -290,7 +335,6 @@ function getPullAuthor(client) {
         return login;
     });
 }
-exports.getPullAuthor = getPullAuthor;
 function getAssignedUsers(config, changedFiles) {
     const components = config.components;
     const assignedUsers = new Set();
@@ -307,7 +351,6 @@ function getAssignedUsers(config, changedFiles) {
     }
     return Array.from(assignedUsers);
 }
-exports.getAssignedUsers = getAssignedUsers;
 function match(name, ownedPath) {
     // special case for root
     if (ownedPath === "/")
@@ -350,7 +393,6 @@ function getRefs() {
     }
     return { base, head };
 }
-exports.getRefs = getRefs;
 function getChangedFiles(client, base, head) {
     return __awaiter(this, void 0, void 0, function* () {
         // Use GitHub's compare two commits API.
@@ -374,7 +416,6 @@ function getChangedFiles(client, base, head) {
         return changedFiles;
     });
 }
-exports.getChangedFiles = getChangedFiles;
 function getReviewers(client) {
     return __awaiter(this, void 0, void 0, function* () {
         const result = yield client.rest.pulls.listRequestedReviewers({
@@ -389,7 +430,6 @@ function getReviewers(client) {
         return result.data.users;
     });
 }
-exports.getReviewers = getReviewers;
 function getReviews(client) {
     return __awaiter(this, void 0, void 0, function* () {
         const result = yield client.rest.pulls.listReviews({
@@ -404,7 +444,6 @@ function getReviews(client) {
         return result.data;
     });
 }
-exports.getReviews = getReviews;
 function getFileContents(client, ref, location) {
     return __awaiter(this, void 0, void 0, function* () {
         const result = yield client.rest.repos.getContent({
@@ -435,7 +474,6 @@ function loadYaml(client, ref, location) {
         }
     });
 }
-exports.loadYaml = loadYaml;
 
 
 /***/ }),
